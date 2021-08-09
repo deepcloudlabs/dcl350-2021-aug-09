@@ -3,7 +3,6 @@ package com.example.lottery.service.business;
 import java.security.SecureRandom;
 import java.util.Random;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

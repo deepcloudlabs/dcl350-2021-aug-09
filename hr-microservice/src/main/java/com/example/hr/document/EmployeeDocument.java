@@ -18,7 +18,7 @@ import com.example.validation.Iban;
 import com.example.validation.TcKimlikNo;
 
 @Document(collection = "employees")
-public class EmployeeDocument {
+public class EmployeeDocument { // Technology: Spring Data Mongo
 	@TcKimlikNo
 	@Id
 	private String kimlikNo;

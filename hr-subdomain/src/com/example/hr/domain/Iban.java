@@ -12,6 +12,10 @@ public final class Iban {
 		this.value = value;
 	}
 
+	public String getValue() {
+		return value;
+	}
+
 	public static Iban valueOf(String value) {
 		Objects.requireNonNull(value);
 		if (!isValid(value))

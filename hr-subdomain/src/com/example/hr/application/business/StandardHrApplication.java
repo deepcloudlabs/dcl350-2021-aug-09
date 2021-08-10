@@ -14,6 +14,11 @@ public class StandardHrApplication implements HrApplication {
 	private EmployeeRepository employeeRepository;
 	private EventPublisher eventPublisher;
 	
+	public StandardHrApplication(EmployeeRepository employeeRepository, EventPublisher eventPublisher) {
+		this.employeeRepository = employeeRepository;
+		this.eventPublisher = eventPublisher;
+	}
+
 	@Override
 	public void hireEmployee(Employee employee) {
 		TcKimlikNo kimlikNo = employee.getKimlikNo();

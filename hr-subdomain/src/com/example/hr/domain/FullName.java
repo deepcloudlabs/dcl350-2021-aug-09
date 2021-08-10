@@ -14,8 +14,8 @@ public final class FullName {
 	}
 
 	public static FullName of(String first, String last) {
-		Objects.requireNonNull(first);
-		Objects.requireNonNull(last);
+		Objects.requireNonNull(first,"You must provide a first name");
+		Objects.requireNonNull(last,"You must provide a last name");
 		return new FullName(first, last);
 	}
 

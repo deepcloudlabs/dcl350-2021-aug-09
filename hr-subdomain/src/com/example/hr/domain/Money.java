@@ -21,6 +21,14 @@ public final class Money {
 		return Money.of(value, FiatCurrency.TL);
 	}
 
+	public double getValue() {
+		return value;
+	}
+
+	public FiatCurrency getCurrency() {
+		return currency;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -23,6 +23,70 @@ public class Employee {
 	private JobStyle jobStyle;
 	private Photo photo;
 
+	public TcKimlikNo getKimlikNo() {
+		return kimlikNo;
+	}
+
+	public void setKimlikNo(TcKimlikNo kimlikNo) {
+		this.kimlikNo = kimlikNo;
+	}
+
+	public FullName getFullname() {
+		return fullname;
+	}
+
+	public void setFullname(FullName fullname) {
+		this.fullname = fullname;
+	}
+
+	public Iban getIban() {
+		return iban;
+	}
+
+	public void setIban(Iban iban) {
+		this.iban = iban;
+	}
+
+	public Money getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Money salary) {
+		this.salary = salary;
+	}
+
+	public Year getBirthYear() {
+		return birthYear;
+	}
+
+	public void setBirthYear(Year birthYear) {
+		this.birthYear = birthYear;
+	}
+
+	public List<Department> getDepartments() {
+		return departments;
+	}
+
+	public void setDepartments(List<Department> departments) {
+		this.departments = departments;
+	}
+
+	public JobStyle getJobStyle() {
+		return jobStyle;
+	}
+
+	public void setJobStyle(JobStyle jobStyle) {
+		this.jobStyle = jobStyle;
+	}
+
+	public Photo getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(Photo photo) {
+		this.photo = photo;
+	}
+
 	// constructor!
 	public Employee(TcKimlikNo kimlikNo, FullName fullname, Iban iban, Money salary, Year birthYear,
 			List<Department> departments, JobStyle jobStyle, Photo photo) {
@@ -129,6 +193,31 @@ public class Employee {
 	public String toString() {
 		return "Employee [kimlikNo=" + kimlikNo + ", fullname=" + fullname + ", iban=" + iban + ", salary=" + salary
 				+ ", birthYear=" + birthYear + ", departments=" + departments + ", jobStyle=" + jobStyle + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((kimlikNo == null) ? 0 : kimlikNo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (kimlikNo == null) {
+			if (other.kimlikNo != null)
+				return false;
+		} else if (!kimlikNo.equals(other.kimlikNo))
+			return false;
+		return true;
 	}
 	
 }

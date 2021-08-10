@@ -4,6 +4,7 @@ import java.util.List;
 
 public class StudyInteger {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// -Djava.lang.Integer.IntegerCache.high=1024
 		// Integer is an immutable class

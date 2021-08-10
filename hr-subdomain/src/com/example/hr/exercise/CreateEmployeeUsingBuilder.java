@@ -4,7 +4,6 @@ import com.example.hr.domain.Department;
 import com.example.hr.domain.Employee;
 import com.example.hr.domain.FiatCurrency;
 import com.example.hr.domain.JobStyle;
-import com.example.hr.domain.Photo;
 
 public class CreateEmployeeUsingBuilder {
 

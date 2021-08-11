@@ -17,6 +17,12 @@ public class EventPublisherKafkaAdapter implements EventPublisher {
 	private KafkaTemplate<String, String> kafkaTemplate;
 	private ObjectMapper objectMapper;
 
+	// constructor injection
+	public EventPublisherKafkaAdapter(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+		this.kafkaTemplate = kafkaTemplate;
+		this.objectMapper = objectMapper;
+	}
+
 	@Override
 	public void publish(EventBase event) {
 		try {

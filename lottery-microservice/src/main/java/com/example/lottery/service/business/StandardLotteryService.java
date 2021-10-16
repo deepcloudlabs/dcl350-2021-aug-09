@@ -5,14 +5,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 import com.example.lottery.service.LotteryService;
 import com.example.lottery.service.RandomNumberService;
 
 @Service
+@RefreshScope
 public class StandardLotteryService implements LotteryService {
-
+	@Value("${lotteryMax}")
+	private int lotteryMax;
+	@Value("${lotterySize}")
+	private int lotterySize;
     private RandomNumberService randomNumberService;
 	
 	private List<RandomNumberService> randomNumberServices;
@@ -39,9 +45,9 @@ public class StandardLotteryService implements LotteryService {
 
 
 	private List<Integer> draw(){
-		return IntStream.generate(() -> randomNumberService.generate(1,60))
+		return IntStream.generate(() -> randomNumberService.generate(1,lotteryMax))
 				        .distinct()
-				        .limit(6)
+				        .limit(lotterySize)
 				        .sorted()
 				        .boxed()
 				        .collect(Collectors.toList());
